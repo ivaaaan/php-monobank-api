@@ -1,5 +1,5 @@
 {
-    "name": "iillexial/monobank-ynab",
+    "name": "iillexial/php-monobank-api",
     "description": "YNAB integration for Monobank",
     "type": "project",
     "license": "MIT",

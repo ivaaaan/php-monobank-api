@@ -1,5 +1,9 @@
 # PHP library for Monobank API
 
+## Installation
+
+`$ composer require iillexial/php-monobank-api`
+
 ## Examples
 
 ### Get statements
