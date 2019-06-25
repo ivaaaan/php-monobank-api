@@ -1,0 +1,32 @@
+{
+    "name": "iillexial/monobank-ynab",
+    "description": "YNAB integration for Monobank",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Klymenchenko",
+            "email": "iillexial@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "vlucas/phpdotenv": "^3.4",
+        "jorijn/ynab-sdk-php": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.2",
+        "symfony/var-dumper": "^4.3",
+        "phpstan/phpstan": "^0.11.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "scripts": {
+        "analyze": "vendor/bin/phpstan analyse src --level=5"
+    }
+}
