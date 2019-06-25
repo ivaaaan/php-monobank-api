@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Monobank;
 
+use Monobank\Request\Bank;
 use Monobank\Request\Personal;
 use GuzzleHttp\Client;
 
@@ -17,21 +18,20 @@ final class Monobank
     public $personal;
 
     /**
-     * @var string
+     * @var Bank
      */
-    private $accessToken;
+    public $bank;
 
-    public function __construct(string $accessToken)
+    public function __construct(?string $accessToken = null)
     {
-        $this->accessToken = $accessToken;
-
         $client = new Client([
             'base_uri' => self::$baseUrl,
             'headers' => [
-                'X-Token' => $this->accessToken,
+                'X-Token' => $accessToken,
             ],
         ]);
 
         $this->personal = new Personal($client);
+        $this->bank = new Bank($client);
     }
 }

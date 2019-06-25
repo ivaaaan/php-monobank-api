@@ -21,14 +21,20 @@ foreach ($statements->statements() as $statement) {
 
 ```php
 $monobank = new Monobank\Monobank('token');
-$clientInfo = $monobank->getClientInfo();
+$clientInfo = $monobank->personal->getClientInfo();
 
 
 ```
 
+### Get currency rates
+
+```php
+$monobank = new Monobank\Monobank();
+$rates = $monobank->bank->getCurrencyRates();
+```
+
 ## TODO
 
-- [ ] Implement `/bank/currency`
 - [ ] Error handling
 - [ ] Tests
 - [ ] Docs

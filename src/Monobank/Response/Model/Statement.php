@@ -109,9 +109,9 @@ final class Statement
         return $this->id;
     }
 
-    public function time(): int
+    public function time(): \DateTime
     {
-        return $this->time;
+        return (new \DateTime())->setTimestamp($this->time);
     }
 
     public function description(): string
