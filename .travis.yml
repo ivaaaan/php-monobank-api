@@ -37,7 +37,7 @@ matrix:
       env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" TEST_COMMAND="composer test"
 
 install:
-  - travis_retry composer update ${COMPOSER_FLAGS} --prefer-dist --no-interaction
+  - travis_retry composer install ${COMPOSER_FLAGS}
 
 script:
   - $TEST_COMMAND
