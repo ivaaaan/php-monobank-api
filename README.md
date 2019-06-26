@@ -35,7 +35,6 @@ $rates = $monobank->bank->getCurrencyRates();
 
 ## TODO
 
-- [ ] Error handling
 - [ ] Tests
 - [ ] Docs
 
