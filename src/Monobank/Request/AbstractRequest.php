@@ -6,7 +6,9 @@ namespace Monobank\Request;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
+use Monobank\Exception\Factory;
 
 abstract class AbstractRequest
 {
@@ -20,9 +22,20 @@ abstract class AbstractRequest
         $this->client = $client;
     }
 
+    /**
+     * @throws \Monobank\Exception\InvalidAccountException
+     * @throws \Monobank\Exception\InternalErrorException
+     * @throws \Monobank\Exception\MonobankException
+     * @throws \Monobank\Exception\TooManyRequestsException
+     * @throws \Monobank\Exception\UnknownTokenException
+     */
     protected function makeRequest(Request $request): array
     {
-        $response = $this->client->send($request);
+        try {
+            $response = $this->client->send($request);
+        } catch (RequestException $exception) {
+            throw Factory::createFromResponse($exception->getResponse());
+        }
 
         return json_decode($response->getBody()->getContents(), true);
     }

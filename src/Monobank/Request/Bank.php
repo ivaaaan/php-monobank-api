@@ -9,6 +9,11 @@ use Monobank\Response\CurrencyRatesResponse;
 
 final class Bank extends AbstractRequest
 {
+    /**
+     * @throws \Monobank\Exception\InternalErrorException
+     * @throws \Monobank\Exception\MonobankException
+     * @throws \Monobank\Exception\TooManyRequestsException
+     */
     public function getCurrencyRates()
     {
         $httpResponse = $this->makeRequest(new Request('GET', '/bank/currency'));
