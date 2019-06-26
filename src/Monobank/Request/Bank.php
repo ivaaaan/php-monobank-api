@@ -14,7 +14,7 @@ final class Bank extends AbstractRequest
      * @throws \Monobank\Exception\MonobankException
      * @throws \Monobank\Exception\TooManyRequestsException
      */
-    public function getCurrencyRates()
+    public function getCurrencyRates(): CurrencyRatesResponse
     {
         $httpResponse = $this->makeRequest(new Request('GET', '/bank/currency'));
 

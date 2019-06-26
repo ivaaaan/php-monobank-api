@@ -32,7 +32,7 @@ final class Personal extends AbstractRequest
      * @throws \Monobank\Exception\UnknownTokenException
      * @throws \Monobank\Exception\InvalidAccountException
      */
-    public function getStatement(string $account, \DateTime $from, \DateTime $to = null)
+    public function getStatement(string $account, \DateTime $from, \DateTime $to = null): StatementResponse
     {
         $httpResponse = $this->makeRequest(
             new Request(
