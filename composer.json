@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.1",
         "ext-json": "*",
         "ext-curl": "*"
     },
@@ -30,6 +30,7 @@
         }
     },
     "scripts": {
-        "analyze": "vendor/bin/phpstan analyse src --level=5"
+        "analyze": "vendor/bin/phpstan analyse src --level=5",
+        "test": "vendor/bin/phpunit"
     }
 }
