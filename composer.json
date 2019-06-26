@@ -1,6 +1,6 @@
 {
     "name": "iillexial/php-monobank-api",
-    "description": "YNAB integration for Monobank",
+    "description": "PHP library for Monobank API",
     "type": "project",
     "license": "MIT",
     "authors": [
