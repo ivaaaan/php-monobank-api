@@ -24,6 +24,11 @@
             "": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "scripts": {
         "analyze": "vendor/bin/phpstan analyse src --level=5"
     }

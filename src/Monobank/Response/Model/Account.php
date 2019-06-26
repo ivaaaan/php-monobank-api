@@ -45,8 +45,8 @@ final class Account
         return new self(
             $data['id'],
             $data['balance'],
-            $data['credit_limit'],
-            $data['currency_code'],
+            $data['creditLimit'],
+            $data['currencyCode'],
             $data['cashbackType']
         );
     }
