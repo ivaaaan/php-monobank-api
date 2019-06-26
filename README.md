@@ -1,5 +1,7 @@
 # PHP library for Monobank API
 
+[![Build Status](https://travis-ci.org/ivaaaan/php-monobank-api.svg?branch=master)](https://travis-ci.org/ivaaaan/php-monobank-api)
+
 ## Installation
 
 `$ composer require iillexial/php-monobank-api`
