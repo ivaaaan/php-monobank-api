@@ -23,11 +23,6 @@ env:
   global:
     - TEST_COMMAND="composer test"
 
-branches:
-  except:
-    - /^analysis-.*$/
-    - /^flintci-.*$/
-
 matrix:
   fast_finish: true
   allow_failures:
