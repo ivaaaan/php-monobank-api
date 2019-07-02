@@ -23,19 +23,14 @@ final class Factory
         switch ($errorDescription) {
             case self::INVALID_ACCOUNT:
                 return new InvalidAccountException($errorDescription);
-                break;
             case self::UNKNOWN_TOKEN:
                 return new UnknownTokenException($errorDescription);
-                break;
             case self::TOO_MANY_REQUESTS:
                 return new TooManyRequestsException($errorDescription);
-                break;
             case self::INTERNAL_ERROR:
                 return new InternalErrorException($errorDescription);
-                break;
             default:
                 return new MonobankException($errorDescription);
-                break;
         }
     }
 }
