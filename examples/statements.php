@@ -14,6 +14,7 @@ try {
 } catch (Exception $exception) {
     exit($exception->getMessage());
 }
+
 foreach ($statements->statements() as $statement) {
     echo $statement->id() . "\n";
 }

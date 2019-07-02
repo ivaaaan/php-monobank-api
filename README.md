@@ -2,21 +2,27 @@
 
 [![Build Status](https://travis-ci.org/ivaaaan/php-monobank-api.svg?branch=master)](https://travis-ci.org/ivaaaan/php-monobank-api)
 
-## Installation
+## Requirements
+
+* PHP >=7.2
+* ext-json
+* ext-curl
+
+## Install
+
+Via Composer
 
 `$ composer require iillexial/php-monobank-api`
 
-## Examples
+## Usage
+
+See [examples](/examples) for more.
 
 ### Get statements
 
 ```php
 $monobank = new Monobank\Monobank('token');
 $statements = $monobank->personal->getStatements('account_id', new DateTime());
-
-foreach ($statements->statements() as $statement) {
-    echo $statement->id() . "\n";
-}
 ```
 
 ### Get client info
@@ -24,7 +30,6 @@ foreach ($statements->statements() as $statement) {
 ```php
 $monobank = new Monobank\Monobank('token');
 $clientInfo = $monobank->personal->getClientInfo();
-
 
 ```
 
@@ -35,10 +40,11 @@ $monobank = new Monobank\Monobank();
 $rates = $monobank->bank->getCurrencyRates();
 ```
 
-## TODO
+## Testing
 
-- [ ] Tests
-- [ ] Docs
+Just run:
+
+`$ composer test`
 
 
 ## License
