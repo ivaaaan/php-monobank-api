@@ -1,6 +1,7 @@
 # PHP library for Monobank API
 
 [![Build Status](https://travis-ci.org/ivaaaan/php-monobank-api.svg?branch=master)](https://travis-ci.org/ivaaaan/php-monobank-api)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ivaaaan/php-monobank-api/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ivaaaan/php-monobank-api/?branch=master)
 
 ## Requirements
 
