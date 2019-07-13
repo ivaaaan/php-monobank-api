@@ -4,7 +4,7 @@ use Monobank\Monobank;
 
 require __DIR__.'/../vendor/autoload.php';
 
-$monobank = new Monobank('uW9LSFYxHe60Y1AlEKGXtJq4h5ooB--i51oQctTwsRnY');
+$monobank = new Monobank();
 
 $monobank->personal->setWebhook('https://google.com');
 $monobank->personal->deleteWebhook();
