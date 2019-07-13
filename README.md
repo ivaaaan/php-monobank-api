@@ -34,6 +34,21 @@ $clientInfo = $monobank->personal->getClientInfo();
 
 ```
 
+### Set a webhook
+
+```php
+$monobank = new Monobank\Monobank('token');
+$clientInfo = $monobank->personal->setWebhook('url here');
+```
+
+### Delete a webhook
+
+```php
+$monobank = new Monobank\Monobank('token');
+$clientInfo = $monobank->personal->deleteWebhook();
+```
+
+
 ### Get currency rates
 
 ```php

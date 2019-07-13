@@ -43,4 +43,35 @@ final class Personal extends AbstractRequest
 
         return StatementResponse::fromResponse($httpResponse);
     }
+
+    /**
+     * @throws \Monobank\Exception\InternalErrorException
+     * @throws \Monobank\Exception\MonobankException
+     * @throws \Monobank\Exception\TooManyRequestsException
+     * @throws \Monobank\Exception\UnknownTokenException
+     */
+    public function setWebhook(string $url): bool
+    {
+        $httpResponse = $this->makeRequest(
+            new Request(
+                'POST',
+                '/personal/webhook',
+                ['Content-type' => 'application/json'],
+                json_encode(['webHookUrl' => $url])
+            )
+        );
+
+        return ($httpResponse['status'] ?? null) === 'ok';
+    }
+
+    /**
+     * @throws \Monobank\Exception\InternalErrorException
+     * @throws \Monobank\Exception\MonobankException
+     * @throws \Monobank\Exception\TooManyRequestsException
+     * @throws \Monobank\Exception\UnknownTokenException
+     */
+    public function deleteWebhook(): bool
+    {
+        return $this->setWebhook('');
+    }
 }
