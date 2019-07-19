@@ -18,7 +18,7 @@ final class Factory
 
     public static function createFromResponse(ResponseInterface $response)
     {
-        $errorDescription = json_decode($response->getBody()->getContents(), true)['errorDescription'];
+        $errorDescription = json_decode($response->getBody()->getContents(), true)['errorDescription'] ?? 'Unknown error';
 
         switch ($errorDescription) {
             case self::INVALID_ACCOUNT:
