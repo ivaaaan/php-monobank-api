@@ -6,30 +6,15 @@ namespace Monobank\Response\Model;
 
 final class Account
 {
-    /**
-     * @var string
-     */
-    private $id;
+    private string $id;
 
-    /**
-     * @var int
-     */
-    private $balance;
+    private int $balance;
 
-    /**
-     * @var int
-     */
-    private $creditLimit;
+    private int $creditLimit;
 
-    /**
-     * @var int
-     */
-    private $currencyCode;
+    private int $currencyCode;
 
-    /**
-     * @var string
-     */
-    private $cashbackType;
+    private string $cashbackType;
 
     public function __construct(string $id, int $balance, int $creditLimit, int $currencyCode, string $cashbackType)
     {

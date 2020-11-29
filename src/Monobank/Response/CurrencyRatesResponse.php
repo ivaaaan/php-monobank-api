@@ -8,10 +8,7 @@ use Monobank\Response\Model\CurrencyInfo;
 
 final class CurrencyRatesResponse
 {
-    /**
-     * @var array|CurrencyInfo[]
-     */
-    private $rates;
+    private array $rates;
 
     public function __construct(array $rates)
     {

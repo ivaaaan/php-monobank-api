@@ -4,23 +4,17 @@ declare(strict_types=1);
 
 namespace Monobank;
 
+use GuzzleHttp\Client;
 use Monobank\Request\Bank;
 use Monobank\Request\Personal;
-use GuzzleHttp\Client;
 
 final class Monobank
 {
-    private static $baseUrl = 'https://api.monobank.ua';
+    private static string $baseUrl = 'https://api.monobank.ua';
 
-    /**
-     * @var Personal
-     */
-    public $personal;
+    public Personal $personal;
 
-    /**
-     * @var Bank
-     */
-    public $bank;
+    public Bank $bank;
 
     public function __construct(?string $accessToken = null)
     {
