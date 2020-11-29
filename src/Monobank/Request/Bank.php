@@ -5,14 +5,17 @@ declare(strict_types=1);
 namespace Monobank\Request;
 
 use GuzzleHttp\Psr7\Request;
+use Monobank\Exception\InternalErrorException;
+use Monobank\Exception\MonobankException;
+use Monobank\Exception\TooManyRequestsException;
 use Monobank\Response\CurrencyRatesResponse;
 
 final class Bank extends AbstractRequest
 {
     /**
-     * @throws \Monobank\Exception\InternalErrorException
-     * @throws \Monobank\Exception\MonobankException
-     * @throws \Monobank\Exception\TooManyRequestsException
+     * @throws InternalErrorException
+     * @throws MonobankException
+     * @throws TooManyRequestsException
      */
     public function getCurrencyRates(): CurrencyRatesResponse
     {

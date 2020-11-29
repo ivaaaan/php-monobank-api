@@ -8,15 +8,9 @@ use Monobank\Response\Model\Account;
 
 final class ClientInfoResponse
 {
-    /**
-     * @var string
-     */
-    private $name;
+    private string $name;
 
-    /**
-     * @var array|Account[]
-     */
-    private $accounts;
+    private array $accounts;
 
     public function __construct(string $name, array $accounts)
     {

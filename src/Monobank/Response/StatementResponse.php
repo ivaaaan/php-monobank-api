@@ -8,10 +8,7 @@ use Monobank\Response\Model\Statement;
 
 final class StatementResponse
 {
-    /**
-     * @var array|Statement[]
-     */
-    private $statements;
+    private array $statements;
 
     public function __construct(array $statements)
     {

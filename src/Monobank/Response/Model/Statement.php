@@ -4,62 +4,32 @@ declare(strict_types=1);
 
 namespace Monobank\Response\Model;
 
+use DateTime;
+use DateTimeInterface;
+
 final class Statement
 {
-    /**
-     * @var string
-     */
-    private $id;
+    private string $id;
 
-    /**
-     * @var int
-     */
-    private $time;
+    private int $time;
 
-    /**
-     * @var string
-     */
-    private $description;
+    private string $description;
 
-    /**
-     * @var int
-     */
-    private $mcc;
+    private int $mcc;
 
-    /**
-     * @var bool
-     */
-    private $hold;
+    private bool $hold;
 
-    /**
-     * @var int
-     */
-    private $amount;
+    private int $amount;
 
-    /**
-     * @var int
-     */
-    private $operationAmount;
+    private int $operationAmount;
 
-    /**
-     * @var int
-     */
-    private $currencyCode;
+    private int $currencyCode;
 
-    /**
-     * @var int
-     */
-    private $commissionRate;
+    private int $commissionRate;
 
-    /**
-     * @var int
-     */
-    private $cashbackAmount;
+    private int $cashbackAmount;
 
-    /**
-     * @var int
-     */
-    private $balance;
+    private int $balance;
 
     public function __construct(
         string $id,
@@ -109,9 +79,9 @@ final class Statement
         return $this->id;
     }
 
-    public function time(): \DateTime
+    public function time(): DateTimeInterface
     {
-        return (new \DateTime())->setTimestamp($this->time);
+        return (new DateTime())->setTimestamp($this->time);
     }
 
     public function description(): string

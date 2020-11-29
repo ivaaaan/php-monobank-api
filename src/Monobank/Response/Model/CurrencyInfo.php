@@ -4,37 +4,22 @@ declare(strict_types=1);
 
 namespace Monobank\Response\Model;
 
+use DateTime;
+use DateTimeInterface;
+
 final class CurrencyInfo
 {
-    /**
-     * @var int
-     */
-    private $currencyCodeA;
+    private int $currencyCodeA;
 
-    /**
-     * @var int
-     */
-    private $currencyCodeB;
+    private int $currencyCodeB;
 
-    /**
-     * @var int
-     */
-    private $date;
+    private int $date;
 
-    /**
-     * @var float
-     */
-    private $rateSell;
+    private ?float $rateSell;
 
-    /**
-     * @var float|null
-     */
-    private $rateBuy;
+    private ?float $rateBuy;
 
-    /**
-     * @var float|null
-     */
-    private $rateCross;
+    private ?float $rateCross;
 
     public function __construct(
         int $currencyCodeA,
@@ -74,9 +59,9 @@ final class CurrencyInfo
         return $this->currencyCodeB;
     }
 
-    public function date(): \DateTime
+    public function date(): DateTimeInterface
     {
-        return (new \DateTime())->setTimestamp($this->date);
+        return (new DateTime())->setTimestamp($this->date);
     }
 
     public function rateSell(): ?float

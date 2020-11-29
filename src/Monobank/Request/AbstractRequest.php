@@ -9,13 +9,15 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 use Monobank\Exception\Factory;
+use Monobank\Exception\InternalErrorException;
+use Monobank\Exception\InvalidAccountException;
+use Monobank\Exception\MonobankException;
+use Monobank\Exception\TooManyRequestsException;
+use Monobank\Exception\UnknownTokenException;
 
 abstract class AbstractRequest
 {
-    /**
-     * @var ClientInterface|Client
-     */
-    protected $client;
+    protected ClientInterface $client;
 
     public function __construct(Client $client)
     {
@@ -23,11 +25,11 @@ abstract class AbstractRequest
     }
 
     /**
-     * @throws \Monobank\Exception\InvalidAccountException
-     * @throws \Monobank\Exception\InternalErrorException
-     * @throws \Monobank\Exception\MonobankException
-     * @throws \Monobank\Exception\TooManyRequestsException
-     * @throws \Monobank\Exception\UnknownTokenException
+     * @throws InvalidAccountException
+     * @throws InternalErrorException
+     * @throws MonobankException
+     * @throws TooManyRequestsException
+     * @throws UnknownTokenException
      */
     protected function makeRequest(Request $request): array
     {
